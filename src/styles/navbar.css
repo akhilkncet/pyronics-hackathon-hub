@@ -1,0 +1,111 @@
+.navbar {
+    background: #0f1419;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid #2a2f3a;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--vc-neon-pink);
+    letter-spacing: 1.8px;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 10px 40px rgba(157, 0, 255, 0.14), 0 0 18px rgba(0, 240, 255, 0.08);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    text-shadow: 0 12px 40px rgba(157, 0, 255, 0.35), 0 0 60px rgba(0, 240, 255, 0.12);
+    transform: translateY(-1px);
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: rgba(234, 247, 255, 0.92);
+    text-decoration: none;
+    font-weight: 700;
+    transition: var(--transition);
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+}
+
+.nav-link:hover {
+    color: var(--vc-neon-cyan);
+    text-shadow: 0 6px 20px rgba(0, 240, 255, 0.06);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--vc-neon-cyan);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #0f1419;
+        padding: 1rem;
+        gap: 0.5rem;
+        border-bottom: 1px solid #2a2f3a;
+    }
+    
+    .nav-menu.open {
+        display: flex;
+    }
+    
+    .nav-container {
+        justify-content: space-between;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,13 @@
+.footer {
+    background: linear-gradient(135deg, #040215 0%, #1a0033 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 2px solid var(--vc-neon-pink);
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+    color: rgba(234, 247, 255, 0.8);
+}

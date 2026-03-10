@@ -8,15 +8,16 @@ export default function Home() {
       <Hero 
         title="PYRONIX 2K26"
         subtitle="Unleash Your Innovation · March 24, 2026"
-        ctaText="🎯 Get Started"
+        ctaText="🎯 Get Your Pass"
         ctaLink="/passes"
         overlayTitle="PYRONIX 2K26 — IGNITE THE INNOVATION"
         overlaySubtitle="Competitions, concerts and creativity — join us March 24, 2026."
+        showCountdown={true}
       />
 
       <section className="section about-section">
         <div className="container">
-          <h2 className="section-title">Instructions</h2>
+          <h2 className="section-title">📋 Instructions</h2>
           <p className="section-subtitle">Important participation details</p>
           <p className="about-description">
             All participants must bring their own laptops and AI tools. No additional provisions will be provided by the organizers except internet. All should register individually and can team up for their events.
@@ -24,7 +25,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
       <section id="about" className="section about-section">
         <div className="container">
           <h2 className="section-title">About PYRONIX 2K26</h2>
@@ -101,16 +101,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Events Section */}
       <section id="events" className="section events-section">
         <div className="container">
-          <h2 className="section-title">PYRONIX 2K26</h2>
+          <h2 className="section-title">Events</h2>
           <p className="section-subtitle">Explore our Technical, Non-Technical and Fun events</p>
           <EventGrid filterType="all" />
         </div>
       </section>
 
-      {/* Common Event */}
       <section className="section">
         <div className="container">
           <h3 className="event-category">🎤 Common Event</h3>

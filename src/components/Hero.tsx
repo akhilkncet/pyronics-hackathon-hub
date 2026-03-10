@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../styles/hero.css';
 
@@ -9,6 +10,18 @@ interface HeroProps {
   overlayTitle?: string;
   overlaySubtitle?: string;
   showCountdown?: boolean;
+}
+
+function getTimeLeft(target: Date) {
+  const now = new Date().getTime();
+  const diff = target.getTime() - now;
+  if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  return {
+    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((diff / (1000 * 60)) % 60),
+    seconds: Math.floor((diff / 1000) % 60),
+  };
 }
 
 export default function Hero({ 
@@ -24,6 +37,17 @@ export default function Hero({
   const showPrimaryAction = !!ctaLink && ctaLink !== location.pathname;
   const showEventsAction = location.pathname !== '/events';
 
+  const eventDate = new Date('2026-03-24T09:00:00');
+  const [timeLeft, setTimeLeft] = useState(getTimeLeft(eventDate));
+
+  useEffect(() => {
+    if (!showCountdown) return;
+    const timer = setInterval(() => setTimeLeft(getTimeLeft(eventDate)), 1000);
+    return () => clearInterval(timer);
+  }, [showCountdown]);
+
+  const pad = (n: number) => String(n).padStart(2, '0');
+
   return (
     <div className={`page-hero ${showCountdown ? '' : 'minimal'}`.trim()} data-sign-overlay="true">
       {overlayTitle && (
@@ -36,34 +60,38 @@ export default function Hero({
         <h1 className="hero-title">{title}</h1>
         <p className="hero-tagline">{subtitle}</p>
 
-        {showCountdown && <div className="countdown-section">
-          <div className="countdown-container">
-            <div className="countdown-box">
-              <span className="countdown-value">00</span>
-              <span className="countdown-label">Days</span>
-            </div>
-            <span className="countdown-separator">:</span>
-            <div className="countdown-box">
-              <span className="countdown-value">00</span>
-              <span className="countdown-label">Hours</span>
-            </div>
-            <span className="countdown-separator">:</span>
-            <div className="countdown-box">
-              <span className="countdown-value">00</span>
-              <span className="countdown-label">Minutes</span>
-            </div>
-            <span className="countdown-separator">:</span>
-            <div className="countdown-box">
-              <span className="countdown-value">00</span>
-              <span className="countdown-label">Seconds</span>
+        {showCountdown && (
+          <div className="countdown-section">
+            <div className="countdown-container">
+              <div className="countdown-box">
+                <span className="countdown-value">{pad(timeLeft.days)}</span>
+                <span className="countdown-label">Days</span>
+              </div>
+              <span className="countdown-separator">:</span>
+              <div className="countdown-box">
+                <span className="countdown-value">{pad(timeLeft.hours)}</span>
+                <span className="countdown-label">Hours</span>
+              </div>
+              <span className="countdown-separator">:</span>
+              <div className="countdown-box">
+                <span className="countdown-value">{pad(timeLeft.minutes)}</span>
+                <span className="countdown-label">Minutes</span>
+              </div>
+              <span className="countdown-separator">:</span>
+              <div className="countdown-box">
+                <span className="countdown-value">{pad(timeLeft.seconds)}</span>
+                <span className="countdown-label">Seconds</span>
+              </div>
             </div>
           </div>
-        </div>}
+        )}
 
-        {showCountdown && <div className="hero-info">
-          <span className="info-badge">📅 March 24, 2026</span>
-          <span className="info-badge">📍 Engineering Block, Kongunadu College</span>
-        </div>}
+        {showCountdown && (
+          <div className="hero-info">
+            <span className="info-badge">📅 March 24, 2026</span>
+            <span className="info-badge">📍 Kongunadu College of Engineering</span>
+          </div>
+        )}
 
         {(showPrimaryAction || showEventsAction) && (
           <div className="hero-buttons">

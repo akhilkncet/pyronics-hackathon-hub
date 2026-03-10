@@ -10,10 +10,10 @@ export const SITE_INFO = {
 export const FORMS = {
   gold: 'https://forms.gle/YOUR-GOLD-FORM-LINK',
   silver: 'https://forms.gle/YOUR-SILVER-FORM-LINK',
-  workshop: 'https://forms.gle/YOUR-WORKSHOP-FORM-LINK',
-  ticket1: 'https://docs.google.com/forms/d/e/1FAIpQLSetUIFUx0N2P749ThJfWEk-0pIew3Z2G1dtSyDQvBeZ-wWiZQ/viewform?usp=header',
-  ticket2: 'https://docs.google.com/forms/d/e/1FAIpQLScxpFRL_cZxWneMBBsihmr4iNhLoaYzgrYqilkrlFvVVoyBRw/viewform?usp=header',
-  ticket3: 'https://docs.google.com/forms/d/e/1FAIpQLScFOqg3mPAzCukJVSE4XGlu-gAz8cA4IRa77uDa9qedbvEAtg/viewform?usp=header'
+  workshop: 'https://forms.gle/2ZczWqJT2ApYrrmC7',
+  ticket1: 'https://forms.gle/ix9BtSkuXznavbcZ9',
+  ticket2: 'https://forms.gle/zMZQM6LXtj7b6CF98',
+  ticket3: 'https://forms.gle/RNS9BDgudf8SojyF7'
 };
 
 export const EVENT_DATABASE = {
@@ -165,10 +165,10 @@ export const EVENT_DATABASE = {
 export const PASSES = [
   {
     id: 'workshop',
-    name: 'WORKSHOP PASS',
+    name: 'WORKSHOP',
     icon: '🛡️',
     description: 'Access to workshops',
-    price: '₹300',
+    price: '₹200',
     priceColor: '#ffe8c4',
     features: [
       'Access to workshops',

@@ -109,18 +109,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <h3 className="event-category">🎤 Common Event</h3>
-          <div className="event-container">
-            <div className="event-card highlight">
-              <div className="event-card-icon">🎤</div>
-              <div className="event-name">Open Stage</div>
-              <div className="event-desc">For all participants</div>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

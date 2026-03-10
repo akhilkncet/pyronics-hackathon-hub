@@ -1,4 +1,28 @@
 /* Passes */
+.passes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 2.5rem auto;
+    max-width: 1200px;
+    align-items: stretch;
+}
+
+@media (max-width: 900px) {
+    .passes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .passes-grid {
+        grid-template-columns: 1fr;
+    }
+    .pass-card-top { padding: 1.2rem; }
+    .pass-price { font-size: 1.8rem; }
+    .pass-cta { width: 100%; }
+}
+
 .pass-card-interactive {
     border-radius: 16px;
     overflow: hidden;
@@ -6,6 +30,8 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.04);
+    display: flex;
+    flex-direction: column;
 }
 
 .pass-card-interactive:hover {
@@ -39,6 +65,10 @@
     padding: 1.5rem;
     text-align: center;
     background: linear-gradient(180deg, rgba(10, 0, 32, 0.9), rgba(10, 0, 32, 0.95));
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .pass-price {

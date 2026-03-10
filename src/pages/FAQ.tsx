@@ -3,13 +3,15 @@ import Hero from '../components/Hero';
 import '../styles/pages.css';
 
 const FAQS = [
-  { question: "How do I register?", answer: "There is no need to create an account. Simply choose a pass on the Passes page and complete the Google Form to register." },
-  { question: "What are the pass options and prices?", answer: "We offer three main passes: RUBY — ₹250 (1 technical + 1 non-technical), EMERALD — ₹300 (1 technical + 2 non-technical), TOPAZ — ₹350 (2 technical + 2 non-technical)." },
-  { question: "Who can participate?", answer: "PYRONIX is open to students from all colleges. Events are grouped as Technical, Non-Technical and Fun. Check each event for rules and team sizes." },
-  { question: "Is there a refund policy?", answer: "Pass fees are generally non-refundable. Requests for refunds due to exceptional circumstances will be evaluated by the organizing committee — contact us with details." },
-  { question: "Can I change my team members after registration?", answer: "Minor team changes may be allowed before the event start, subject to approval. Use the contact form to request a change with team and registration details." },
-  { question: "Where can I find the schedule?", answer: "The full schedule will be published on the Events page and shared via the official channels closer to the event date." },
-  { question: "What is the code of conduct?", answer: "All participants must follow the event code of conduct — be respectful, follow safety guidelines, and comply with judge instructions." },
+  { question: "How do I register?", answer: "No account needed. Visit the Passes page, choose your pass type, and click Register — you'll be taken directly to the Google Form to complete your registration." },
+  { question: "What are the pass options and prices?", answer: "We offer four passes: WORKSHOP — ₹200 (access to the Cybersecurity & Ethical Hacking workshop + labs), RUBY — ₹250 (1 tech + 1 non-tech event), EMERALD — ₹300 (1 tech + 2 non-tech events), TOPAZ — ₹350 (2 tech + 2 non-tech events)." },
+  { question: "What is the Workshop pass?", answer: "The Workshop pass (₹200) gives you access to the Cybersecurity and Ethical Hacking workshop, including hands-on labs and materials. It is a standalone pass separate from the Tech/Non-Tech event passes." },
+  { question: "Who can participate?", answer: "PYRONIX 2K26 is open to students from all colleges. Events span Technical, Non-Technical, and Fun categories. Check individual event details for team sizes and eligibility rules." },
+  { question: "Is there a refund policy?", answer: "Pass fees are non-refundable. In exceptional circumstances, please contact the coordinators directly with your registration details and reason for the request." },
+  { question: "Can I change my team members after registration?", answer: "Minor team changes before the event start may be allowed at the organizer's discretion. Contact a student coordinator via the Coordinators page with your registration details." },
+  { question: "Where can I find the schedule?", answer: "The detailed schedule will be shared on the Events page and through official channels closer to the event date (March 2026)." },
+  { question: "What is the code of conduct?", answer: "All participants must be respectful, follow safety guidelines, and comply with judge and organizer instructions. Misconduct may result in disqualification." },
+  { question: "Do I need a laptop for events?", answer: "Laptops are required for technical events. AI tools and external resources are generally not permitted during competitions unless explicitly stated in the event rules." },
 ];
 
 export default function FAQ() {

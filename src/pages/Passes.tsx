@@ -1,3 +1,4 @@
+import Hero from '../components/Hero';
 import { PASSES } from '../constants';
 import { registerForPass } from '../utils';
 import '../styles/passes.css';
@@ -5,20 +6,19 @@ import '../styles/passes.css';
 export default function Passes() {
   return (
     <div className="page-passes">
-      <div className="page-hero" data-sign-overlay="true">
-        <div className="hero-overlay" role="region" aria-label="Passes hero">
-          <h2>Grab Your Pass</h2>
-          <p>Choose the pass that fits you — register and secure your spot.</p>
-          <button className="hero-cta" onClick={() => window.location.href = '/passes'}>Choose Passes</button>
-        </div>
-      </div>
+      <Hero
+        title="Grab Your Pass"
+        subtitle="Choose the pass that fits you — register and secure your spot."
+        overlayTitle="Grab Your Pass"
+        overlaySubtitle="Choose the pass that fits you — register and secure your spot."
+      />
 
       <main className="section registration-dashboard" style={{background: 'var(--section-violet)', padding: '3rem 2rem', borderTop: '2px solid rgba(157,0,255,0.3)'}}>
         <div className="container">
           <h2 className="section-title" style={{color: '#00f0ff'}}>🎟️ Choose Your Pass & Register</h2>
           <p className="section-subtitle" style={{color: 'rgba(255,255,255,0.85)'}}>Select a pass type and click to complete your registration via Google Form</p>
 
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: '2rem', marginTop: '2.5rem', maxWidth: '1000px', margin: '2.5rem auto'}}>
+          <div className="passes-grid">
             {PASSES.map(pass => (
               <div key={pass.id} className={`pass-card-interactive pass-variant-${pass.name.toLowerCase()}`}>
                 <div className="pass-card-top">

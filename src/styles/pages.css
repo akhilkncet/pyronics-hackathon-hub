@@ -260,196 +260,210 @@
     letter-spacing: 1px;
 }
 
-/* Coordinators */
+/* Coordinators — Glowing Avatar Cards */
 .coordinator-section {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .coordinator-grid {
+    display: grid;
+    gap: 1.4rem;
+}
+
+.student-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.faculty-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.coord-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 3px solid transparent;
+    padding: 1.8rem 1.2rem 1.4rem;
+    text-align: center;
     display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.coord-card:hover {
+    transform: translateY(-6px);
+}
+
+.coord-accent-1 { border-top-color: #9d00ff; }
+.coord-accent-2 { border-top-color: #00f0ff; }
+.coord-accent-3 { border-top-color: #ff2d95; }
+
+.coord-accent-1:hover { box-shadow: 0 20px 50px rgba(157, 0, 255, 0.25); }
+.coord-accent-2:hover { box-shadow: 0 20px 50px rgba(0, 240, 255, 0.25); }
+.coord-accent-3:hover { box-shadow: 0 20px 50px rgba(255, 45, 149, 0.25); }
+
+.coord-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
     justify-content: center;
-}
-
-.coordinator-card {
-    background: transparent;
-    border-radius: 14px;
-    overflow: hidden;
-    flex: 0 1 300px;
-    max-width: 300px;
-    border-left: 5px solid transparent;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-    transition: var(--transition);
-}
-
-.coordinator-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
-}
-
-.coord-top {
-    height: 160px;
-    display: flex;
-    align-items: flex-end;
-    padding: 18px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
     color: #fff;
+    margin-bottom: 0.3rem;
+    flex-shrink: 0;
 }
 
-.coord-top.student {
-    background: linear-gradient(180deg, rgba(157, 0, 255, 0.85), rgba(108, 92, 231, 0.65));
-}
+.coord-accent-1 .coord-avatar { background: linear-gradient(135deg, #9d00ff, #6c5ce7); box-shadow: 0 0 16px rgba(157, 0, 255, 0.55); }
+.coord-accent-2 .coord-avatar { background: linear-gradient(135deg, #00b4d8, #00f0ff); box-shadow: 0 0 16px rgba(0, 240, 255, 0.45); }
+.coord-accent-3 .coord-avatar { background: linear-gradient(135deg, #ff2d95, #ff7eb6); box-shadow: 0 0 16px rgba(255, 45, 149, 0.45); }
 
-.coord-top.staff {
-    background: linear-gradient(180deg, rgba(0, 240, 255, 0.3), rgba(9, 132, 227, 0.6));
+.coord-card.staff { border-top-color: #ffd166; }
+.coord-card.staff:hover { box-shadow: 0 20px 50px rgba(255, 209, 102, 0.2); }
+.coord-card.staff .coord-avatar { background: linear-gradient(135deg, #f9ca24, #f0932b); box-shadow: 0 0 16px rgba(249, 202, 36, 0.45); }
+.coord-card.staff .coord-role { color: #ffd166; }
+
+.coord-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    width: 100%;
 }
 
 .coord-name {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.1;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    letter-spacing: 0.5px;
-}
-
-.coord-bottom {
-    background: linear-gradient(180deg, rgba(10, 0, 32, 0.9), rgba(10, 0, 32, 0.95));
-    padding: 14px 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    min-height: 100px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
 }
 
 .coord-role {
     color: var(--vc-neon-cyan);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .coord-details {
-    color: rgba(174, 182, 216, 0.8);
-    font-size: 0.82rem;
     display: flex;
-    gap: 6px;
+    gap: 4px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .coord-details .badge {
-    background: rgba(0, 240, 255, 0.06);
-    padding: 4px 8px;
+    background: rgba(0, 240, 255, 0.07);
+    padding: 3px 7px;
     border-radius: 6px;
-    border: 1px solid rgba(0, 240, 255, 0.08);
-    color: rgba(233, 233, 255, 0.8);
-    font-size: 0.78rem;
+    border: 1px solid rgba(0, 240, 255, 0.1);
+    color: rgba(220, 220, 255, 0.75);
+    font-size: 0.7rem;
 }
 
 .coord-contact {
-    color: rgba(215, 215, 239, 0.7);
-    font-size: 0.88rem;
+    color: rgba(200, 210, 240, 0.75);
+    font-size: 0.8rem;
+    margin-top: 0.15rem;
 }
 
-.accent-1 { border-left-color: #6c5ce7; }
-.accent-2 { border-left-color: #00b894; }
-.accent-3 { border-left-color: #0984e3; }
-
-.student-grid .coordinator-card {
-    flex: 0 1 calc(48% - 1rem);
-    max-width: calc(48% - 1rem);
+@media (max-width: 960px) {
+    .student-grid { grid-template-columns: repeat(2, 1fr); }
+    .faculty-grid { grid-template-columns: repeat(2, 1fr); max-width: 100%; }
 }
 
-.faculty-grid .coordinator-card {
-    flex: 0 1 300px;
-    max-width: 300px;
-}
-
-@media (max-width: 720px) {
-    .student-grid .coordinator-card,
-    .faculty-grid .coordinator-card {
-        flex: 0 1 100%;
-        max-width: 100%;
-    }
+@media (max-width: 500px) {
+    .student-grid, .faculty-grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* Contact */
-.contact-grid {
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.contact-info-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 240, 255, 0.12);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
     display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    justify-content: center;
-    margin-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.contact-form {
-    flex: 1 1 620px;
-    max-width: 700px;
+.contact-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0, 240, 255, 0.1);
+    border-color: rgba(0, 240, 255, 0.3);
 }
 
-.contact-form form {
-    background: rgba(10, 0, 32, 0.5);
-    padding: 2rem;
-    border-radius: 14px;
-    border: 1px solid rgba(0, 240, 255, 0.08);
+.contact-info-icon {
+    font-size: 2.2rem;
 }
 
-.contact-field {
-    margin-bottom: 1.2rem;
-}
-
-.contact-field label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: rgba(234, 247, 255, 0.8);
-}
-
-.contact-field input,
-.contact-field textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border-radius: 8px;
-    font-family: inherit;
-}
-
-.contact-actions {
-    text-align: right;
-    margin-top: 0.5rem;
-}
-
-.contact-aside {
-    flex: 0 1 360px;
-    max-width: 360px;
-    background: rgba(10, 0, 32, 0.4);
-    padding: 1.5rem;
-    border-radius: 14px;
-    border: 1px solid rgba(0, 240, 255, 0.06);
-}
-
-.contact-aside h3 {
-    margin-top: 0;
+.contact-info-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     color: var(--vc-neon-cyan);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
-.contact-aside p {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
-}
-
-.contact-address {
+.contact-info-value {
     font-size: 0.82rem;
-    opacity: 0.7;
-    margin-top: 1rem;
-    line-height: 1.6;
+    color: rgba(234, 247, 255, 0.85);
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+    width: 100%;
+    text-align: center;
 }
 
-@media (max-width: 980px) {
-    .contact-grid { flex-direction: column; }
-    .contact-aside { max-width: 100%; }
+a.contact-info-value:hover {
+    color: var(--vc-neon-cyan);
+    text-decoration: underline;
+}
+
+.contact-address-box {
+    margin-top: 2rem;
+    padding: 1.4rem 1.8rem;
+    background: rgba(10, 0, 32, 0.45);
+    border-left: 3px solid var(--vc-neon-cyan);
+    border-radius: 10px;
+    font-size: 0.88rem;
+    color: rgba(234, 247, 255, 0.75);
+    line-height: 1.7;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 900px) {
+    .contact-info-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+    .contact-info-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -457,4 +471,22 @@
         grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     }
     .event-card-icon { font-size: 2rem; }
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .features-grid { grid-template-columns: 1fr; }
+    .about-description { font-size: 0.95rem; }
+    .illustration-grid { grid-template-columns: 1fr 1fr; }
+    h2 { font-size: 1.7rem; }
+    h3 { font-size: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+    .event-container { grid-template-columns: 1fr 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .stat-number { font-size: 1.8rem; }
+    .stat-card { padding: 1.2rem; }
+    .feature-card { padding: 1.4rem; }
+    .coord-card { padding: 1.2rem 0.8rem; }
+    .coord-avatar { width: 52px; height: 52px; font-size: 1rem; }
+    .coord-name { font-size: 0.85rem; }
+    .student-grid, .faculty-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
 }

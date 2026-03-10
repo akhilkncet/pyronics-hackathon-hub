@@ -199,6 +199,26 @@
     font-family: 'Orbitron', monospace;
 }
 
+/* Hero Mobile */
+@media (max-width: 768px) {
+    .page-hero { min-height: 50vh; padding: 2rem 1rem; }
+    .page-hero.minimal { min-height: 32vh; }
+    .hero-title { font-size: 2.2rem; letter-spacing: 1px; }
+    .hero-tagline { font-size: 0.9rem; }
+    .hero-overlay { padding: 1.2rem 1rem; }
+    .hero-overlay h2 { font-size: 1.1rem; }
+    .hero-buttons { gap: 0.8rem; margin-top: 1.2rem; }
+    .info-badge { font-size: 0.82rem; padding: 0.5rem 1rem; }
+    .countdown-value { font-size: 1.8rem; }
+    .countdown-box { min-width: 60px; padding: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 1.7rem; }
+    .page-hero { min-height: 44vh; }
+    .page-hero.minimal { min-height: 28vh; }
+}
+
 .hero-cta {
     display: inline-flex;
     gap: 0.6rem;

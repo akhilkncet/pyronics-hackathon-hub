@@ -1,88 +1,88 @@
-/* Passes Section */
+/* Passes */
 .pass-card-interactive {
-    border-radius: 18px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45), 0 8px 30px rgba(157, 0, 255, 0.06);
-    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     color: #fff;
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
-.pass-card-interactive.revealed {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+    border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .pass-card-interactive:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 34px 100px rgba(0, 0, 0, 0.6);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .pass-card-top {
     padding: 1.6rem;
     text-align: center;
-    background: linear-gradient(135deg, #2a2f3a 0%, #1f2430 100%);
 }
 
 .pass-card-top h3 {
     margin: 0;
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     font-weight: 800;
-    letter-spacing: 0.6px;
+    letter-spacing: 1px;
+    font-family: 'Orbitron', sans-serif;
+    color: rgba(0, 0, 0, 0.85);
 }
 
 .pass-card-top p {
-    margin: 0.35rem 0 0 0;
-    opacity: 0.95;
+    margin: 0.3rem 0 0;
+    opacity: 0.9;
     font-weight: 600;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.9rem;
 }
 
 .pass-card-body {
-    padding: 1.4rem;
+    padding: 1.5rem;
     text-align: center;
-    background: rgba(0, 0, 0, 0.04);
+    background: linear-gradient(180deg, rgba(10, 0, 32, 0.9), rgba(10, 0, 32, 0.95));
 }
 
 .pass-price {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 900;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .pass-features {
     list-style: none;
     padding: 0;
-    margin: 0.6rem 0;
-    color: rgba(255, 255, 255, 0.9);
+    margin: 0.8rem 0;
     text-align: left;
 }
 
 .pass-features li {
-    padding: 0.25rem 0;
+    padding: 0.3rem 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
 }
 
 .pass-cta {
-    margin-top: 0.6rem;
+    margin-top: 1rem;
     display: inline-block;
-    padding: 0.6rem 1rem;
+    padding: 0.7rem 1.2rem;
     border-radius: 8px;
     font-weight: 800;
+    font-size: 0.95rem;
 }
 
 /* Variants */
 .pass-variant-workshop .pass-card-top {
-    background: linear-gradient(135deg, #ffcc70 0%, #ff9f43 100%);
+    background: linear-gradient(135deg, #ffcc70, #ff9f43);
 }
 
 .pass-variant-ruby .pass-card-top {
-    background: linear-gradient(135deg, #ff7aa2 0%, #ff6b6b 100%);
+    background: linear-gradient(135deg, #ff7aa2, #ff4d89);
 }
 
 .pass-variant-emerald .pass-card-top {
-    background: linear-gradient(135deg, #6be3a8 0%, #00b894 100%);
+    background: linear-gradient(135deg, #6be3a8, #00b894);
 }
 
 .pass-variant-topaz .pass-card-top {
-    background: linear-gradient(135deg, #9ef07a 0%, #2aa04a 100%);
+    background: linear-gradient(135deg, #9ef07a, #2aa04a);
 }

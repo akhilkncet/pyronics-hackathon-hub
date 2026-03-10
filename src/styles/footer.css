@@ -1,13 +1,19 @@
 .footer {
-    background: linear-gradient(135deg, #040215 0%, #1a0033 100%);
+    background: linear-gradient(180deg, var(--section-violet), #040010);
     color: white;
     text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
-    border-top: 2px solid var(--vc-neon-pink);
+    padding: 2.5rem 2rem;
+    margin-top: 0;
+    border-top: 1px solid rgba(0, 240, 255, 0.08);
 }
 
 .footer-content p {
-    margin: 0.5rem 0;
-    color: rgba(234, 247, 255, 0.8);
+    margin: 0.4rem 0;
+    color: rgba(234, 247, 255, 0.5);
+    font-size: 0.9rem;
+}
+
+.footer-content p:first-child {
+    color: rgba(234, 247, 255, 0.7);
+    font-weight: 600;
 }
